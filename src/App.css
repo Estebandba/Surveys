@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 
+* For simplicity, all the customized CSS resides here
+*/
+html,body {
+  margin: 0;
+  height:100vh;
   display: flex;
   flex-direction: column;
+
+  font-family: 'Acme', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  min-height: auto;
+  flex-direction: column;
   align-items: center;
+}
+.main-container {  
+  flex: 1 0 auto;
+  min-width: 100%;
+  display: flex;
+  min-height: 80vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.Dashboard {  
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-self: center;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+.page-footer{
+
+  border-top: #D95656 solid;
+  color: #D95656;
+  background-color: white;
+}
+
+.nav-wrapper {
+  border-bottom: #D95656 solid;  
+  color: #D95656;
+  background-color: white;
+}
+
+nav .brand-logo {
+  color: #D95656;
+
+}
+nav ul a {
+  color: #D95656;
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+}
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+
+img:hover{
+  animation: bounce 0.5s;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.card .card-action:last-child {
+  background-color: #D95656;
+  border: white 5px solid;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn {
+  min-width: 80%;
+  min-height: 100%;
+  border-radius: 5px;
+  background-color: #D95656;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:hover{
+  background-color: rgba(217, 86, 86, 0.747);
+}
+
+.loading {
+    background: transparent;
+    min-width: 100%;
+    min-height: 100%;
+}
+.graph {
+  min-height: 60vh;
+  min-width: 90%;
+
+}
+i{
+  padding-left: 10px;
+}
+i.fab.fa-twitter{
+  padding-top: 8px;
 }

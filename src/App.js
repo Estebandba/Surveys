@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Dashboard from './components/Dashboard';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ChartWrapper from './components/Charts/ChartWrapper';
+/* 
+* App Component where the Dashboard is 
+* initialized and where the route setup resides
+*/
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App" data-test='component-app'>
+          <Navbar/>
+          <div className="main-container">
+            <Route path="/" exact component={Dashboard} />
+            <Route path="/chart/:name" component={ChartWrapper} />                 
+          </div>
+      </div>
+    </Router>
   );
 }
 

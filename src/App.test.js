@@ -1,9 +1,17 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from './App';
+import Enzyme, {shallow} from 'enzyme';
+import EnzymeAdapter from 'enzyme-adapter-react-16';
+import {findByTestAttr} from '../test/testUtils';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+Enzyme.configure({adapter: new EnzymeAdapter()});
+
+const setup = (props={}, state= null) => {
+  return shallow(<App />)
+}
+
+test('renders without error', () => {
+  const wrapper = setup();
+  const appComponent = findByTestAttr(wrapper, 'component-app');
+  expect(appComponent.length).toBe(1);
 });
