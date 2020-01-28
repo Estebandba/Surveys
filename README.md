@@ -2,7 +2,7 @@
 
 This app is an assessment part of the selection process for the developers' selection by Focaldata.
 
-Simple app that displays multiple surveys queried from Focaldata's API and present them on interactive charts.
+Simple app that displays multiple surveys queried from Focaldata's API and presenting them on interactive charts.
 
 - libraries/frameworks:
 
